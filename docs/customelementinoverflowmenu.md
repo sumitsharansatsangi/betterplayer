@@ -7,7 +7,7 @@ controlsConfiguration: BetterPlayerControlsConfiguration(
                 BetterPlayerOverflowMenuItem(
                     Icons.account_circle_rounded,
                     "Custom element",
-                    () => print("Click!"),
+                    () => debugPrint("Click!"),
                 )
             ],
         ),

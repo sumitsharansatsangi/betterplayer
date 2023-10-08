@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:better_player/better_player.dart';
 import 'package:better_player/src/configuration/better_player_controller_event.dart';
 import 'package:better_player/src/core/better_player_utils.dart';
@@ -639,8 +640,14 @@ class BetterPlayerController {
       throw StateError("The data source has not been initialized");
     }
 
-    await videoPlayerController!.pause();
-    _postEvent(BetterPlayerEvent(BetterPlayerEventType.pause));
+    try{
+      await videoPlayerController!.pause();
+      _postEvent(BetterPlayerEvent(BetterPlayerEventType.pause));
+    }
+    catch(e)
+    {
+      debugPrint("Erorogdkfg "+e.toString());
+    }
   }
 
   ///Move player to specific position/moment of the video.
@@ -1166,6 +1173,7 @@ class BetterPlayerController {
         break;
       default:
 
+        // ignore: todo
         ///TODO: Handle when needed
         break;
     }
@@ -1260,7 +1268,7 @@ class BetterPlayerController {
   ///cache started for given [betterPlayerDataSource] then it will be ignored.
   Future<void> stopPreCache(
       BetterPlayerDataSource betterPlayerDataSource) async {
-    return VideoPlayerController?.stopPreCache(betterPlayerDataSource.url,
+    return VideoPlayerController.stopPreCache(betterPlayerDataSource.url,
         betterPlayerDataSource.cacheConfiguration?.key);
   }
 

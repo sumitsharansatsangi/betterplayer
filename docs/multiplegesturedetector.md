@@ -9,7 +9,7 @@ BetterPlayerMultipleGestureDetector(
               child: BetterPlayer(controller: _betterPlayerController),
             ),
             onTap: () {
-              print("Tap!");
+              debugPrint("Tap!");
             },
           ),
 ```

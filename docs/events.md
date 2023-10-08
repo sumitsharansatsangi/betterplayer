@@ -31,7 +31,7 @@ You can listen to video player events like:
 After creating `BetterPlayerController` you can add event listener this way:
 ```dart
 _betterPlayerController.addEventsListener((event){
-    print("Better player event: ${event.betterPlayerEventType}");
+    debugPrint("Better player event: ${event.betterPlayerEventType}");
 });
 ```
 Your event listener will be removed on dispose time automatically.
