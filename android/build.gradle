@@ -2,13 +2,12 @@ group 'com.jhomlala.better_player.better_player'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.exoPlayerVersion = "2.17.1"
-    ext.lifecycleVersion = "2.4.0-beta01"
-    ext.annotationVersion = "1.2.0"
+    ext.exoPlayerVersion = "2.19.1"
+    ext.lifecycleVersion = "2.6.2"
+    ext.annotationVersion = "1.7.0"
     ext.workVersion = "2.7.0"
-    ext.coreVersion = "1.6.0"
-    ext.gradleVersion = "7.0.2"
-    ext.kotlinVersion = "1.5.31"
+    ext.gradleVersion = "7.4.2"
+    ext.kotlinVersion = "1.9.0"
 
     repositories {
         google()
@@ -16,7 +15,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath "com.android.tools.build:gradle:$gradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
@@ -32,7 +31,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -67,5 +66,5 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 }
